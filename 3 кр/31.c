@@ -29,6 +29,9 @@ int** GetFillArray(int size) {
             topRow[i] = ++counter;
         }
 
+        if (counter == a)
+            break;
+
         int rightBridge = size - deepSquere - 1;
         for (int i = deepSquere + 1; i < rightBridge; i++)
         {
@@ -36,11 +39,17 @@ int** GetFillArray(int size) {
             row[rightBridge] = ++counter;
         }
 
+        if (counter == a)
+            break;
+
         int bottomBridge = size - deepSquere;
         int* bottomRow = arr[size - 1 - deepSquere];
         for (int i = bottomBridge - 1; i && bottomBridge > 0; i--) {
             bottomRow[i] = ++counter;
         }
+
+        if (counter == a)
+            break;
 
         int leftBridge = size - deepSquere;
         for (int i = leftBridge - 1; i && leftBridge > 0; i--)
@@ -48,6 +57,9 @@ int** GetFillArray(int size) {
             int* row = arr[i];
             row[deepSquere] = ++counter;
         }
+
+        if (counter == a)
+            break;
 
         deepSquere++;
     }
@@ -57,7 +69,7 @@ int** GetFillArray(int size) {
 
 int main()
 {
-    int size = 3;
+    int size = 4;
     int** arr = GetFillArray(size);
 
     PrintArray(arr, size);
