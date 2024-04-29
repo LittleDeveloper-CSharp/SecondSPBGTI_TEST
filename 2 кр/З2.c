@@ -13,9 +13,9 @@ Write your code in this editor and press "Run" button to compile and execute it.
 int main()
 {
     int count = 20;
-    int arr[count];
+    int arr[20];
     for(int i = 0; i < count; i++){
-        arr[i] =rand() % 20; 
+        arr[i] = rand() % 20; 
     }
     
     int max, min,
